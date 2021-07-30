@@ -1,0 +1,114 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Animated_Sprite_Frames/skeleton_spriteframes.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Scripts/Skeleton.gd" type="Script" id=2]
+[ext_resource path="res://scenes/EnemyHealthBar.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 36, 80 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 82, 98 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 38, 86 )
+
+[node name="Skeleton" type="KinematicBody2D"]
+position = Vector2( 8, -45 )
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 2
+collision_mask = 8
+script = ExtResource( 2 )
+
+[node name="EnemyHealthBar" parent="." instance=ExtResource( 3 )]
+margin_left = -486.0
+margin_top = -392.0
+margin_right = 538.0
+margin_bottom = 208.0
+
+[node name="ProgressBar" parent="EnemyHealthBar" index="0"]
+margin_left = -42.0
+margin_top = 0.0
+margin_right = 12.0
+margin_bottom = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -10, 12 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+self_modulate = Color( 0.54902, 0.941176, 0.0235294, 1 )
+frames = ExtResource( 1 )
+animation = "walk"
+frame = 7
+playing = true
+flip_h = true
+
+[node name="FlipRightPositionRayCast2D" type="RayCast2D" parent="."]
+position = Vector2( -120, -46 )
+enabled = true
+cast_to = Vector2( 0, 200 )
+collision_mask = 8
+
+[node name="FlipLeftPositionRayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 86, -44 )
+enabled = true
+cast_to = Vector2( 0, 200 )
+collision_mask = 8
+
+[node name="DetectPlayerRayCast2D" type="RayCast2D" parent="."]
+position = Vector2( -18, 0 )
+rotation = -1.5708
+enabled = true
+cast_to = Vector2( 0, 700 )
+collide_with_areas = true
+
+[node name="DetectWallRightRayCast2D" type="RayCast2D" parent="."]
+position = Vector2( -12, -10 )
+rotation = -1.5708
+enabled = true
+cast_to = Vector2( 0, 150 )
+collision_mask = 8
+
+[node name="DetectWallLeftRayCast2D" type="RayCast2D" parent="."]
+position = Vector2( -12, -10 )
+rotation = 1.5708
+enabled = true
+cast_to = Vector2( 0, 150 )
+collision_mask = 8
+
+[node name="SwordDetectArea2D" type="Area2D" parent="."]
+position = Vector2( 102, 18 )
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwordDetectArea2D"]
+position = Vector2( -104, -24 )
+shape = SubResource( 2 )
+
+[node name="Hit_React_Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hit_React_Area2D"]
+modulate = Color( 0.847059, 0.0509804, 0.0509804, 1 )
+position = Vector2( -16, 6 )
+shape = SubResource( 3 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+process_parent = true
+physics_process_parent = true
+
+[node name="TimerForAttack" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[node name="TimerForDeath" type="Timer" parent="."]
+one_shot = true
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_AnimatedSprite_frame_changed"]
+[connection signal="body_entered" from="SwordDetectArea2D" to="." method="_on_SwordDetectArea2D_body_entered"]
+[connection signal="area_entered" from="Hit_React_Area2D" to="." method="_on_Hit_React_Area2D_area_entered"]
+[connection signal="timeout" from="TimerForAttack" to="." method="_on_TimerForAttack_timeout"]
+[connection signal="timeout" from="TimerForDeath" to="." method="_on_TimerForDeath_timeout"]
+
+[editable path="EnemyHealthBar"]

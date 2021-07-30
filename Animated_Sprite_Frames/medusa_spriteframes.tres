@@ -1,0 +1,109 @@
+[gd_resource type="SpriteFrames" load_steps=85 format=2]
+
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__017.png" type="Texture" id=1]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__005.png" type="Texture" id=2]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__021.png" type="Texture" id=3]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__023.png" type="Texture" id=4]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__018.png" type="Texture" id=5]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__024.png" type="Texture" id=6]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__019.png" type="Texture" id=7]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__008.png" type="Texture" id=8]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__022.png" type="Texture" id=9]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__025.png" type="Texture" id=10]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__002.png" type="Texture" id=11]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__000.png" type="Texture" id=12]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__001.png" type="Texture" id=13]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__010.png" type="Texture" id=14]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__011.png" type="Texture" id=15]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__012.png" type="Texture" id=16]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__013.png" type="Texture" id=17]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__004.png" type="Texture" id=18]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__015.png" type="Texture" id=19]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__007.png" type="Texture" id=20]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__020.png" type="Texture" id=21]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__003.png" type="Texture" id=22]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__006.png" type="Texture" id=23]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__009.png" type="Texture" id=24]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__014.png" type="Texture" id=25]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__016.png" type="Texture" id=26]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__031.png" type="Texture" id=27]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__026.png" type="Texture" id=28]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__035.png" type="Texture" id=29]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__027.png" type="Texture" id=30]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__029.png" type="Texture" id=31]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__028.png" type="Texture" id=32]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__030.png" type="Texture" id=33]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__032.png" type="Texture" id=34]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__033.png" type="Texture" id=35]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/walk/FW_Meduza_Walking__034.png" type="Texture" id=36]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__010.png" type="Texture" id=37]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__004.png" type="Texture" id=38]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__005.png" type="Texture" id=39]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__016.png" type="Texture" id=40]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__002.png" type="Texture" id=41]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__013.png" type="Texture" id=42]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__017.png" type="Texture" id=43]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__003.png" type="Texture" id=44]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__012.png" type="Texture" id=45]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__015.png" type="Texture" id=46]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__018.png" type="Texture" id=47]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__011.png" type="Texture" id=48]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__000.png" type="Texture" id=49]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__019.png" type="Texture" id=50]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__020.png" type="Texture" id=51]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__007.png" type="Texture" id=52]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__009.png" type="Texture" id=53]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__001.png" type="Texture" id=54]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__008.png" type="Texture" id=55]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__014.png" type="Texture" id=56]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__006.png" type="Texture" id=57]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__023.png" type="Texture" id=58]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__021.png" type="Texture" id=59]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/run/FW_Meduza_Running__022.png" type="Texture" id=60]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__023.png" type="Texture" id=61]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__017.png" type="Texture" id=62]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__004.png" type="Texture" id=63]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__019.png" type="Texture" id=64]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__009.png" type="Texture" id=65]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__000.png" type="Texture" id=66]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__020.png" type="Texture" id=67]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__011.png" type="Texture" id=68]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__022.png" type="Texture" id=69]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__006.png" type="Texture" id=70]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__013.png" type="Texture" id=71]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__012.png" type="Texture" id=72]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__001.png" type="Texture" id=73]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__003.png" type="Texture" id=74]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__007.png" type="Texture" id=75]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__008.png" type="Texture" id=76]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__014.png" type="Texture" id=77]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__015.png" type="Texture" id=78]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__016.png" type="Texture" id=79]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__002.png" type="Texture" id=80]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__018.png" type="Texture" id=81]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__021.png" type="Texture" id=82]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__010.png" type="Texture" id=83]
+[ext_resource path="res://Picture_Imports/Characters/Medusa/die/FW_Meduza_Die__005.png" type="Texture" id=84]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 49 ), ExtResource( 54 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 57 ), ExtResource( 52 ), ExtResource( 55 ), ExtResource( 53 ), ExtResource( 37 ), ExtResource( 48 ), ExtResource( 45 ), ExtResource( 42 ), ExtResource( 56 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 43 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 58 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 2 ), ExtResource( 23 ), ExtResource( 20 ), ExtResource( 8 ), ExtResource( 24 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 25 ), ExtResource( 19 ), ExtResource( 26 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 21 ), ExtResource( 3 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 28 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 27 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 66 ), ExtResource( 73 ), ExtResource( 80 ), ExtResource( 74 ), ExtResource( 63 ), ExtResource( 84 ), ExtResource( 70 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 65 ), ExtResource( 83 ), ExtResource( 68 ), ExtResource( 72 ), ExtResource( 71 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 62 ), ExtResource( 81 ), ExtResource( 64 ), ExtResource( 67 ), ExtResource( 82 ), ExtResource( 69 ), ExtResource( 61 ) ],
+"loop": true,
+"name": "die",
+"speed": 10.0
+} ]

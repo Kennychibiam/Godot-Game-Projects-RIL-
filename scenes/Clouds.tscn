@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Picture_Imports/Backgrounds/clouds.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/ParallaxCloudLayer.gd" type="Script" id=2]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+layer = -55
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1024, 0 )
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 5.0
+margin_top = -113.0
+margin_right = 1029.0
+margin_bottom = 282.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 518, -137 )
+scale = Vector2( 0.576554, 0.5 )
+texture = ExtResource( 1 )

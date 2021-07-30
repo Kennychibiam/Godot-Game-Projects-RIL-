@@ -1,0 +1,137 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Animated_Sprite_Frames/Player_Knight_spriteframes.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Scripts/Player_Knight.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Direction_Buttons.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/HEALTH.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sounds/Hit_Hurt.wav" type="AudioStream" id=5]
+[ext_resource path="res://sounds/slash.wav" type="AudioStream" id=6]
+[ext_resource path="res://scenes/CoinBar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/KeyBar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://sounds/grass_step.wav" type="AudioStream" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 66.6667, 120.667 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 163.333, 123.333 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 56.6667, 126.667 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Idle"
+length = 3.0
+
+[sub_resource type="Animation" id=5]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -80, 50 ), Vector2( -80, 68 ), Vector2( -80, 60 ) ]
+}
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( -10, -19 )
+scale = Vector2( 0.3, 0.3 )
+z_index = 1
+collision_mask = 8
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 600.0 ]
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -80, 50 )
+current = true
+limit_left = 0
+limit_top = -300
+limit_right = 5000
+limit_bottom = 600
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+self_modulate = Color( 0.333333, 0.109804, 0.109804, 1 )
+position = Vector2( 36.6667, -56.6667 )
+scale = Vector2( 1.5, 1.5 )
+frames = ExtResource( 1 )
+animation = "run"
+frame = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 30, -56.6667 )
+shape = SubResource( 1 )
+
+[node name="Sword_Hit_Area" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="SwordCollisionShape2D" type="CollisionShape2D" parent="Sword_Hit_Area"]
+position = Vector2( 120, -113 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="HealthBar" parent="." instance=ExtResource( 4 )]
+
+[node name="Player_React_Area2D" type="Area2D" parent="."]
+modulate = Color( 0.188235, 0, 0.0470588, 1 )
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_React_Area2D"]
+position = Vector2( 30, -60 )
+shape = SubResource( 3 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
+[node name="SwordSlash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+
+[node name="DoubleJumpRayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 67, -86 )
+rotation = -1.5708
+enabled = true
+cast_to = Vector2( 0, 55 )
+collision_mask = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Idle = SubResource( 4 )
+anims/camera_shake = SubResource( 5 )
+
+[node name="TimerForAttackCombo" type="Timer" parent="."]
+one_shot = true
+
+[node name="CoinBar" parent="." instance=ExtResource( 7 )]
+
+[node name="KeyBar" parent="." instance=ExtResource( 8 )]
+
+[node name="Direction_Buttons" parent="." instance=ExtResource( 3 )]
+margin_left = 116.667
+margin_top = 1503.33
+margin_right = 116.667
+margin_bottom = 1503.33
+
+[node name="TimerForDash" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="GrassStepSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+volume_db = 24.0
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_AnimatedSprite_frame_changed"]
+[connection signal="body_entered" from="Sword_Hit_Area" to="." method="_on_Sword_Hit_Area_body_entered"]
+[connection signal="area_entered" from="Player_React_Area2D" to="." method="_on_Player_React_Area2D_area_entered"]
+[connection signal="timeout" from="TimerForAttackCombo" to="." method="_on_TimerForAttackCombo_timeout"]
+[connection signal="timeout" from="TimerForDash" to="." method="_on_TimerForDash_timeout"]
+
+[editable path="HealthBar"]
+
+[editable path="CoinBar"]
+
+[editable path="KeyBar"]

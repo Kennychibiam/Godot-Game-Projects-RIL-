@@ -1,0 +1,129 @@
+[gd_resource type="SpriteFrames" load_steps=75 format=2]
+
+[ext_resource path="res://Picture_Imports/Materials/explosion/explode_1.png" type="Texture" id=1]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__004.png" type="Texture" id=5]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__009.png" type="Texture" id=6]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__012.png" type="Texture" id=7]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__014.png" type="Texture" id=8]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__017.png" type="Texture" id=9]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__005.png" type="Texture" id=10]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__019.png" type="Texture" id=11]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__010.png" type="Texture" id=12]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__008.png" type="Texture" id=13]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__006.png" type="Texture" id=14]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__013.png" type="Texture" id=15]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__001.png" type="Texture" id=16]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__018.png" type="Texture" id=17]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__000.png" type="Texture" id=18]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__002.png" type="Texture" id=19]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__015.png" type="Texture" id=20]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__003.png" type="Texture" id=21]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__011.png" type="Texture" id=22]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__020.png" type="Texture" id=23]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__007.png" type="Texture" id=24]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__016.png" type="Texture" id=25]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__021.png" type="Texture" id=26]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__022.png" type="Texture" id=27]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Walk/FW_Skeleton_Walking__023.png" type="Texture" id=28]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Attack/FW_Skeleton_Attack__005.png" type="Texture" id=29]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Attack/FW_Skeleton_Attack__012.png" type="Texture" id=30]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Attack/FW_Skeleton_Attack__006.png" type="Texture" id=31]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Attack/FW_Skeleton_Attack__010.png" type="Texture" id=33]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Attack/FW_Skeleton_Attack__018.png" type="Texture" id=34]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Attack/FW_Skeleton_Attack__009.png" type="Texture" id=35]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Attack/FW_Skeleton_Attack__015.png" type="Texture" id=36]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Attack/FW_Skeleton_Attack__011.png" type="Texture" id=37]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Attack/FW_Skeleton_Attack__016.png" type="Texture" id=38]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Attack/FW_Skeleton_Attack__007.png" type="Texture" id=39]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Attack/FW_Skeleton_Attack__014.png" type="Texture" id=40]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Attack/FW_Skeleton_Attack__003.png" type="Texture" id=41]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Attack/FW_Skeleton_Attack__008.png" type="Texture" id=42]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Attack/FW_Skeleton_Attack__017.png" type="Texture" id=43]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Attack/FW_Skeleton_Attack__019.png" type="Texture" id=44]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Attack/FW_Skeleton_Attack__013.png" type="Texture" id=46]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Run/FW_Skeleton_Running__010.png" type="Texture" id=49]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Run/FW_Skeleton_Running__013.png" type="Texture" id=50]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Run/FW_Skeleton_Running__007.png" type="Texture" id=51]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Run/FW_Skeleton_Running__012.png" type="Texture" id=52]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Run/FW_Skeleton_Running__003.png" type="Texture" id=53]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Run/FW_Skeleton_Running__000.png" type="Texture" id=54]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Run/FW_Skeleton_Running__008.png" type="Texture" id=55]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Run/FW_Skeleton_Running__009.png" type="Texture" id=56]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Run/FW_Skeleton_Running__014.png" type="Texture" id=57]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Run/FW_Skeleton_Running__001.png" type="Texture" id=58]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Run/FW_Skeleton_Running__006.png" type="Texture" id=59]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Run/FW_Skeleton_Running__015.png" type="Texture" id=60]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Run/FW_Skeleton_Running__016.png" type="Texture" id=61]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Run/FW_Skeleton_Running__017.png" type="Texture" id=62]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Run/FW_Skeleton_Running__005.png" type="Texture" id=63]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Run/FW_Skeleton_Running__002.png" type="Texture" id=64]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Run/FW_Skeleton_Running__011.png" type="Texture" id=65]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Run/FW_Skeleton_Running__004.png" type="Texture" id=66]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Run/FW_Skeleton_Running__018.png" type="Texture" id=67]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Run/FW_Skeleton_Running__019.png" type="Texture" id=68]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Die/FW_Skeleton_Die__001.png" type="Texture" id=87]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Die/FW_Skeleton_Die__000.png" type="Texture" id=88]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Hit/FW_Skeleton_Hit__005.png" type="Texture" id=91]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Hit/FW_Skeleton_Hit__000.png" type="Texture" id=92]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Hit/FW_Skeleton_Hit__001.png" type="Texture" id=93]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Hit/FW_Skeleton_Hit__002.png" type="Texture" id=94]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Hit/FW_Skeleton_Hit__003.png" type="Texture" id=95]
+[ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Hit/FW_Skeleton_Hit__004.png" type="Texture" id=96]
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 256, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 320, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 384, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 448, 0, 64, 64 )
+
+[resource]
+animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": false,
+"name": "die",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 91 ) ],
+"loop": true,
+"name": "hit",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 54 ), ExtResource( 58 ), ExtResource( 64 ), ExtResource( 53 ), ExtResource( 66 ), ExtResource( 63 ), ExtResource( 59 ), ExtResource( 51 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 49 ), ExtResource( 65 ), ExtResource( 52 ), ExtResource( 50 ), ExtResource( 57 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ) ],
+"loop": true,
+"name": "run",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 41 ), ExtResource( 29 ), ExtResource( 31 ), ExtResource( 39 ), ExtResource( 42 ), ExtResource( 35 ), ExtResource( 33 ), ExtResource( 37 ), ExtResource( 30 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 34 ), ExtResource( 44 ) ],
+"loop": true,
+"name": "attack",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 88 ), ExtResource( 87 ) ],
+"loop": true,
+"name": "hit2",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "explosion",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 21 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 24 ), ExtResource( 13 ), ExtResource( 6 ), ExtResource( 12 ), ExtResource( 22 ), ExtResource( 7 ), ExtResource( 15 ), ExtResource( 8 ), ExtResource( 20 ), ExtResource( 25 ), ExtResource( 9 ), ExtResource( 17 ), ExtResource( 11 ), ExtResource( 23 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "walk",
+"speed": 20.0
+} ]

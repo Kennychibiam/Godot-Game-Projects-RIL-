@@ -1,0 +1,286 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Picture_Imports/Items/Key.png" type="Texture" id=1]
+[ext_resource path="res://Picture_Imports/Items/Chest_01.png" type="Texture" id=2]
+[ext_resource path="res://Themes/Meridina_dynamicfont_chooseworld.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scripts/ChooseWorld1Level.gd" type="Script" id=4]
+[ext_resource path="res://Picture_Imports/Items/square.png" type="Texture" id=5]
+[ext_resource path="res://Picture_Imports/Materials/UI/StarGolden.png" type="Texture" id=6]
+[ext_resource path="res://Picture_Imports/Items/back.png" type="Texture" id=7]
+
+[node name="ChooseWorld1Level" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChooseWorld1Level" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="ChooseWorld1Level"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="ChooseWorld1Level/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0196078, 0.0196078, 0.0196078, 0.411765 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ChooseWorld1Level/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -306.5
+margin_top = -117.5
+margin_right = 306.5
+margin_bottom = 117.5
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ChooseWorld1Level/Control/VBoxContainer"]
+margin_right = 613.0
+margin_bottom = 117.0
+custom_fonts/font = ExtResource( 3 )
+text = "CHOOSE LEVEL"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ChooseWorld1Level/Control/VBoxContainer"]
+margin_top = 125.0
+margin_right = 613.0
+margin_bottom = 275.0
+
+[node name="Level1" type="TextureButton" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer" groups=[
+"FirstWorld",
+]]
+margin_right = 150.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+size_flags_horizontal = 0
+texture_normal = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -45.5
+margin_top = -45.5
+margin_right = 45.5
+margin_bottom = 45.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level1/HBoxContainer"]
+margin_right = 68.0
+margin_bottom = 91.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level1/HBoxContainer/VBoxContainer"]
+margin_right = 68.0
+margin_bottom = 25.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level1/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_right = 25.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 25, 25 )
+size_flags_vertical = 0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="KeyLabel" type="Label" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level1/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 33.0
+margin_right = 68.0
+margin_bottom = 25.0
+text = "0/4"
+
+[node name="Label" type="Label" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level1/HBoxContainer/VBoxContainer"]
+margin_top = 33.0
+margin_right = 68.0
+margin_bottom = 58.0
+text = "1"
+align = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level1/HBoxContainer/VBoxContainer"]
+margin_top = 66.0
+margin_right = 68.0
+margin_bottom = 91.0
+
+[node name="TextureRect" type="TextureRect" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level1/HBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 25.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 25, 20 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="TreasureLabel" type="Label" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level1/HBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 33.0
+margin_right = 68.0
+margin_bottom = 25.0
+text = "0/2"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level1/HBoxContainer"]
+margin_left = 76.0
+margin_right = 96.0
+margin_bottom = 91.0
+
+[node name="Star1" type="TextureRect" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level1/HBoxContainer/VBoxContainer2"]
+margin_right = 20.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 20, 20 )
+texture = ExtResource( 6 )
+expand = true
+
+[node name="Star2" type="TextureRect" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level1/HBoxContainer/VBoxContainer2"]
+margin_top = 28.0
+margin_right = 20.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 20, 20 )
+texture = ExtResource( 6 )
+expand = true
+
+[node name="Star3" type="TextureRect" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level1/HBoxContainer/VBoxContainer2"]
+margin_top = 56.0
+margin_right = 20.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 20, 20 )
+texture = ExtResource( 6 )
+expand = true
+
+[node name="Level2" type="TextureButton" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer" groups=[
+"FirstWorld",
+]]
+margin_left = 158.0
+margin_right = 308.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+size_flags_horizontal = 0
+texture_normal = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -45.5
+margin_top = -45.5
+margin_right = 45.5
+margin_bottom = 45.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level2/HBoxContainer"]
+margin_right = 68.0
+margin_bottom = 91.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level2/HBoxContainer/VBoxContainer"]
+margin_right = 68.0
+margin_bottom = 25.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level2/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_right = 25.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 25, 25 )
+size_flags_vertical = 0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="KeyLabel" type="Label" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level2/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 33.0
+margin_right = 68.0
+margin_bottom = 25.0
+text = "0/4"
+
+[node name="Label" type="Label" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level2/HBoxContainer/VBoxContainer"]
+margin_top = 33.0
+margin_right = 68.0
+margin_bottom = 58.0
+text = "2"
+align = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level2/HBoxContainer/VBoxContainer"]
+margin_top = 66.0
+margin_right = 68.0
+margin_bottom = 91.0
+
+[node name="TextureRect" type="TextureRect" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level2/HBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 25.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 25, 20 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="TreasureLabel" type="Label" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level2/HBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 33.0
+margin_right = 68.0
+margin_bottom = 25.0
+text = "0/2"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level2/HBoxContainer"]
+margin_left = 76.0
+margin_right = 96.0
+margin_bottom = 91.0
+
+[node name="Star1" type="TextureRect" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level2/HBoxContainer/VBoxContainer2"]
+margin_right = 20.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 20, 20 )
+texture = ExtResource( 6 )
+expand = true
+
+[node name="Star2" type="TextureRect" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level2/HBoxContainer/VBoxContainer2"]
+margin_top = 28.0
+margin_right = 20.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 20, 20 )
+texture = ExtResource( 6 )
+expand = true
+
+[node name="Star3" type="TextureRect" parent="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level2/HBoxContainer/VBoxContainer2"]
+margin_top = 56.0
+margin_right = 20.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 20, 20 )
+texture = ExtResource( 6 )
+expand = true
+
+[node name="BackButton" type="TextureButton" parent="ChooseWorld1Level/Control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -136.0
+margin_right = 132.0
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level1" to="." method="_on_Level1_button_down"]
+[connection signal="button_down" from="ChooseWorld1Level/Control/VBoxContainer/HBoxContainer/Level2" to="." method="_on_Level2_button_down"]
+[connection signal="button_down" from="ChooseWorld1Level/Control/BackButton" to="." method="_on_BackButton_button_down"]

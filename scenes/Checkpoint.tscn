@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Animated_Sprite_Frames/Checkpoint_spriteframes.tres" type="SpriteFrames" id=1]
+
+[node name="Checkpoint" type="Node2D"]
+position = Vector2( -4, -113 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = ExtResource( 1 )
+animation = "float"
+frame = 11
+playing = true
