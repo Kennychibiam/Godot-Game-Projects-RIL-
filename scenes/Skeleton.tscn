@@ -40,7 +40,7 @@ shape = SubResource( 1 )
 self_modulate = Color( 0.54902, 0.941176, 0.0235294, 1 )
 frames = ExtResource( 1 )
 animation = "walk"
-frame = 7
+frame = 16
 playing = true
 flip_h = true
 

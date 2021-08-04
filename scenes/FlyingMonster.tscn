@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Animated_Sprite_Frames/FlyingMonsterBat_spriteframes.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Scripts/FlyingMonsterBat.gd" type="Script" id=2]
+[ext_resource path="res://scenes/EnemyHealthBar.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 95.3363
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 87.9659
+
+[node name="FlyingMonster" type="KinematicBody2D"]
+scale = Vector2( 0.3, 0.3 )
+collision_layer = 2
+collision_mask = 8
+script = ExtResource( 2 )
+
+[node name="HitReact" type="Area2D" parent="."]
+modulate = Color( 0.12549, 1, 0, 1 )
+collision_layer = 2
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitReact"]
+position = Vector2( 8, -66 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = ExtResource( 1 )
+animation = "idle"
+frame = 3
+playing = true
+
+[node name="VisionRayCastLeft" type="RayCast2D" parent="."]
+position = Vector2( 0, -56 )
+rotation = 1.5708
+scale = Vector2( 50, 1 )
+enabled = true
+cast_to = Vector2( 0, 900 )
+
+[node name="StopRayCastLeft" type="RayCast2D" parent="."]
+position = Vector2( 0, -56 )
+rotation = 1.5708
+scale = Vector2( 50, 1 )
+enabled = true
+cast_to = Vector2( 0, 450 )
+
+[node name="VisionRayCastRight" type="RayCast2D" parent="."]
+position = Vector2( 64, -56 )
+rotation = -1.5708
+scale = Vector2( 50, 1 )
+enabled = true
+cast_to = Vector2( 0, 900 )
+
+[node name="StopRayCastRight" type="RayCast2D" parent="."]
+position = Vector2( 64, -56 )
+rotation = -1.5708
+scale = Vector2( 50, 1 )
+enabled = true
+cast_to = Vector2( 0, 450 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 6, -68 )
+shape = SubResource( 2 )
+
+[node name="FireProjectilePosition" type="Position2D" parent="."]
+position = Vector2( -26.6667, -56 )
+
+[node name="TimerToFire" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="TopRayCast" type="RayCast2D" parent="."]
+position = Vector2( 0, -106.667 )
+rotation = 3.14159
+enabled = true
+cast_to = Vector2( 0, 80 )
+collision_mask = 8
+
+[node name="BottomRayCast" type="RayCast2D" parent="."]
+position = Vector2( 13.3333, 26.6667 )
+rotation = -3.14159
+enabled = true
+cast_to = Vector2( 0, -80 )
+collision_mask = 8
+
+[node name="EnemyHealthBar" parent="." instance=ExtResource( 3 )]
+margin_left = 3.33333
+margin_top = -176.667
+margin_right = 3.33333
+margin_bottom = -176.667
+
+[node name="ProgressBar" parent="EnemyHealthBar" index="0"]
+margin_right = 53.0
+max_value = 10.0
+value = 10.0
+[connection signal="timeout" from="TimerToFire" to="." method="_on_TimerToFire_timeout"]
+
+[editable path="EnemyHealthBar"]

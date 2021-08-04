@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Tileset/HomeScreen.tres" type="TileSet" id=1]
+
+[sub_resource type="Curve2D" id=4]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -547.611, 9, 0, 0, 0, 0, 521.582, 9, 0, 0, 0, 0, 45.0503, 5, 0, 0, 0, 0, -87.0974, 5 )
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 128.631, 34.0448 )
+
+[sub_resource type="Animation" id=3]
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 97.29, 935.0 ]
+}
+
+[node name="MovingPlatform" type="Node2D"]
+
+[node name="Path2D" type="Path2D" parent="."]
+scale = Vector2( 0.998884, 1 )
+curve = SubResource( 4 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 332.259, 9 )
+rotation = -0.0164352
+offset = 882.64
+rotate = false
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Path2D/PathFollow2D"]
+collision_layer = 8
+motion/sync_to_physics = true
+
+[node name="TileMap" type="TileMap" parent="Path2D/PathFollow2D/KinematicBody2D"]
+position = Vector2( -10.231, -3.30693 )
+rotation = 0.0164352
+tile_set = ExtResource( 1 )
+collision_use_parent = true
+format = 1
+tile_data = PoolIntArray( 1, 15, 0, 2, 15, 0, 3, 15, 0, 4, 15, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/KinematicBody2D"]
+position = Vector2( 181.879, 30.9933 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "MovingPlatform"
+playback_process_mode = 0
+anims/MovingPlatform = SubResource( 3 )

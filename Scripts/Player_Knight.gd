@@ -25,8 +25,11 @@ var canDisplayUI=true
 var allowOtherProcesses=true
 var countHigh=0
 var canDash=true
+var snapVector=Vector2.ZERO
+var slopeSlideThreshold=50.0
+var snap=false
 
-onready var restartHome=load("res://scenes/Restart_Home.tscn").instance()
+onready var restartHome=load("res://scenes/RestartHome.tscn").instance()
 
 func _ready() -> void:
 	GlobalScene.LEVEL_COMPLETE=false
@@ -53,6 +56,7 @@ func _physics_process(delta: float) -> void:
 	GlobalScene.PLAYER_POSITION=position
 	if(GlobalScene.LEVEL_COMPLETE or GlobalScene.LEVEL_FAILED):
 		$AnimatedSprite.visible=false
+		$GrassStepSound.stop()
 		set_physics_process(false)
 	
 	#var is_jump_interrupted =  Input.is_action_just_released("jump") and velocity.y < 0.0
@@ -64,16 +68,18 @@ func _physics_process(delta: float) -> void:
 	if(allowOtherProcesses):
 
 		getActionAttack()
+		play_animations_states()
 		direction_input()
 		flip_character()
-		play_animations_states()
+
 		die()
 		ray_cast_collisions()
 	velocity=calculate_move_velocity(velocity,speed,direction,false)
 	
 	if(Input.is_action_just_pressed("ui_dash")):
 		dash()
-	move_and_slide(velocity,floor_normal)
+	snapVector=Vector2(0,32.0)if snap else Vector2.ZERO
+	move_and_slide_with_snap(velocity,snapVector,floor_normal)
 
 
 func getActionAttack():
@@ -100,6 +106,7 @@ func direction_input()->void:
 		direction.x=1
 		
 	if(Input.is_action_just_pressed("ui_up")) :
+		snap=false
 		direction.y=-1
 	
 	if(Input.is_action_just_released("ui_left")):
@@ -151,13 +158,15 @@ func play_animations_states()->void:
 		countHigh+=1
 		#print("in air "+String(countHigh))
 	else:
-		if(countHigh>=60):
+		if(countHigh>=90):
 			$AnimationPlayer.play("camera_shake")
 		#print("on ground "+String(countHigh))
+		snap=true
 		countHigh=0
 		velocity.y=0
 		jump_count=0
 		isJumping=false
+
 	
 	if(!is_on_floor() and velocity.y>-1000 and !isAttacking):
 		animated_sprites.play("fall")

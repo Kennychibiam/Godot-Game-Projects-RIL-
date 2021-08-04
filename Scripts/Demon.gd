@@ -11,7 +11,6 @@ onready var Key=load("res://scenes/Key.tscn").instance()
 
 
 func _ready() -> void:
-	
 	$BossSkeletonHealthBar/BossSkeletonEnemyHealthBar.visible=false
 
 func _physics_process(delta: float) -> void:

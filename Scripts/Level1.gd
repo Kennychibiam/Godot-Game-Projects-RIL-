@@ -1,6 +1,5 @@
 extends Node2D
 var canAddPortal=true
-onready var portal=load("res://scenes/Portal.tscn").instance()
 onready var PAUSE_MENU=load("res://scenes/PauseMenu.tscn")
 
 

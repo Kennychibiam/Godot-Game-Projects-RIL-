@@ -1,14 +1,13 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Picture_Imports/Backgrounds/tree1.png" type="Texture" id=1]
 [ext_resource path="res://Picture_Imports/Backgrounds/hills.png" type="Texture" id=2]
 [ext_resource path="res://Picture_Imports/Backgrounds/sky.png" type="Texture" id=3]
 [ext_resource path="res://Tileset/HomeScreen.tres" type="TileSet" id=4]
 [ext_resource path="res://scenes/Clouds.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Picture_Imports/Backgrounds/Stone.png" type="Texture" id=6]
-[ext_resource path="res://scenes/HomeScreen_Player_Knight.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/HomeScreenPlayerKnight.tscn" type="PackedScene" id=7]
 [ext_resource path="res://sounds/HomeSong.wav" type="AudioStream" id=8]
-[ext_resource path="res://scenes/HomeScreen_Skeleton.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/HomeScreenSkeleton.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scripts/HomeScreen.gd" type="Script" id=12]
 [ext_resource path="res://Picture_Imports/Backgrounds/sun.png" type="Texture" id=13]
 [ext_resource path="res://scenes/HomeMenuPlay.tscn" type="PackedScene" id=14]
@@ -138,22 +137,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RockCanvasLayer2" type="CanvasLayer" parent="."]
-layer = 0
-
-[node name="Rock" type="TextureRect" parent="RockCanvasLayer2"]
-visible = false
-margin_left = 336.0
-margin_top = 434.0
-margin_right = 1166.0
-margin_bottom = 806.0
-rect_scale = Vector2( 0.204965, 0.195036 )
-texture = ExtResource( 6 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="TreesSecondLayerCanvasLayer3" type="CanvasLayer" parent="."]
 layer = -30
 
@@ -227,9 +210,6 @@ stream = ExtResource( 8 )
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( 519, 486 )
-
-[node name="AnimatedSprite" parent="Player" index="0"]
-frame = 3
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
