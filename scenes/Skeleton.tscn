@@ -14,7 +14,6 @@ extents = Vector2( 82, 98 )
 extents = Vector2( 38, 86 )
 
 [node name="Skeleton" type="KinematicBody2D"]
-position = Vector2( 8, -45 )
 scale = Vector2( 0.5, 0.5 )
 collision_layer = 2
 collision_mask = 8
@@ -37,12 +36,10 @@ position = Vector2( -10, 12 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-self_modulate = Color( 0.54902, 0.941176, 0.0235294, 1 )
 frames = ExtResource( 1 )
 animation = "walk"
-frame = 16
+frame = 18
 playing = true
-flip_h = true
 
 [node name="FlipRightPositionRayCast2D" type="RayCast2D" parent="."]
 position = Vector2( -120, -46 )
@@ -104,6 +101,8 @@ one_shot = true
 
 [node name="TimerForDeath" type="Timer" parent="."]
 one_shot = true
+
+[node name="CoinSpawnPos" type="Position2D" parent="."]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_AnimatedSprite_frame_changed"]
 [connection signal="body_entered" from="SwordDetectArea2D" to="." method="_on_SwordDetectArea2D_body_entered"]

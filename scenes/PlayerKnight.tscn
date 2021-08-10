@@ -4,20 +4,20 @@
 [ext_resource path="res://Scripts/Player_Knight.gd" type="Script" id=2]
 [ext_resource path="res://scenes/DirectionButtons.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/HEALTH.tscn" type="PackedScene" id=4]
-[ext_resource path="res://sounds/Hit_Hurt.wav" type="AudioStream" id=5]
+[ext_resource path="res://sounds/hitHurt.wav" type="AudioStream" id=5]
 [ext_resource path="res://sounds/slash.wav" type="AudioStream" id=6]
 [ext_resource path="res://scenes/CoinBar.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/KeyBar.tscn" type="PackedScene" id=8]
-[ext_resource path="res://sounds/grass_step.wav" type="AudioStream" id=9]
+[ext_resource path="res://sounds/grassStep.wav" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 66.6667, 120.667 )
+extents = Vector2( 46.6668, 99.9998 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 163.333, 123.333 )
+extents = Vector2( 143.334, 123.333 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 56.6667, 126.667 )
+extents = Vector2( 56.6667, 98.3331 )
 
 [sub_resource type="Animation" id=4]
 resource_name = "Idle"
@@ -39,8 +39,8 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( -10, -19 )
-scale = Vector2( 0.3, 0.3 )
+position = Vector2( -2.5, -26 )
+scale = Vector2( 0.4, 0.4 )
 z_index = 1
 collision_mask = 8
 script = ExtResource( 2 )
@@ -55,16 +55,17 @@ limit_left = 0
 limit_top = -300
 limit_right = 5000
 limit_bottom = 600
+limit_smoothed = true
+smoothing_enabled = true
+smoothing_speed = 8.8
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 36.6667, -56.6667 )
-scale = Vector2( 1.5, 1.5 )
+position = Vector2( 36.6667, -16.6667 )
 frames = ExtResource( 1 )
-animation = "run"
-frame = 7
+animation = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 30, -56.6667 )
+position = Vector2( 28.3333, -35.0001 )
 shape = SubResource( 1 )
 
 [node name="Sword_Hit_Area" type="Area2D" parent="."]
@@ -72,7 +73,7 @@ collision_layer = 16
 collision_mask = 2
 
 [node name="SwordCollisionShape2D" type="CollisionShape2D" parent="Sword_Hit_Area"]
-position = Vector2( 120, -113 )
+position = Vector2( 4, -123 )
 shape = SubResource( 2 )
 disabled = true
 
@@ -83,7 +84,7 @@ modulate = Color( 0.188235, 0, 0.0470588, 1 )
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player_React_Area2D"]
-position = Vector2( 30, -60 )
+position = Vector2( 31.6667, -36.6666 )
 shape = SubResource( 3 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -93,7 +94,7 @@ stream = ExtResource( 5 )
 stream = ExtResource( 6 )
 
 [node name="DoubleJumpRayCast2D" type="RayCast2D" parent="."]
-position = Vector2( 67, -86 )
+position = Vector2( 54, -61 )
 rotation = -1.5708
 enabled = true
 cast_to = Vector2( 0, 55 )
@@ -117,11 +118,12 @@ margin_right = 116.667
 margin_bottom = 1503.33
 
 [node name="TimerForDash" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.2
 
 [node name="GrassStepSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
-volume_db = 24.0
+volume_db = 18.0
+area_mask = 8
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_AnimatedSprite_frame_changed"]
 [connection signal="body_entered" from="Sword_Hit_Area" to="." method="_on_Sword_Hit_Area_body_entered"]

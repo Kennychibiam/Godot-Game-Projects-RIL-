@@ -13,6 +13,9 @@ func _ready() -> void:
 			if(SaveGame.load_game[i.name]["treasure"]<2):
 				var Star3=i.find_node("Star3")
 				Star3.visible=false
+			if(SaveGame.load_game[i.name]["keys"]<4):
+				var Star2=i.find_node("Star2")
+				Star2.visible=false
 		else:
 			var Star1=i.find_node("Star1")
 			Star1.visible=false

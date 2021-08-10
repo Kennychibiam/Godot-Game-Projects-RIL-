@@ -1,0 +1,141 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Tileset/HomeScreen.tres" type="TileSet" id=1]
+[ext_resource path="res://Picture_Imports/Backgrounds/Vrstva_2.png" type="Texture" id=2]
+[ext_resource path="res://Picture_Imports/Backgrounds/blue_background.png" type="Texture" id=3]
+[ext_resource path="res://Picture_Imports/Backgrounds/Vrstva_6.png" type="Texture" id=4]
+[ext_resource path="res://scenes/Key.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/LevelPause.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/PlayerKnight.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/Level3.gd" type="Script" id=8]
+[ext_resource path="res://scenes/FlyingMonster.tscn" type="PackedScene" id=9]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 76.1488, -18.6534, 0, 0, 0, 0, 81.8058, -850.211 )
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 158.929, 32.0226 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "MovingPlatform"
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 51.37, 749.93 ]
+}
+
+[node name="Level3" type="Node2D"]
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 2017.78, 2021.25 ],
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -40
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mountain2" type="TextureRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = 97.0
+margin_right = 14.0
+margin_bottom = 97.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mountain" type="TextureRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+collision_layer = 8
+collision_mask = 32
+format = 1
+tile_data = PoolIntArray( 65535, 22, 0, 0, 22, 0, 1, 22, 0, 2, 22, 0, 3, 22, 0, 4, 22, 0, 5, 22, 0, 6, 22, 0, 7, 22, 0, 8, 22, 0, 9, 22, 0, 10, 22, 0, 11, 22, 0, 12, 22, 0, 13, 22, 0, 14, 22, 0, 15, 22, 0, 131071, 22, 0, 65536, 22, 0, 65537, 22, 0, 65538, 22, 0, 65539, 22, 0, 65540, 22, 0, 65541, 22, 0, 65542, 22, 0, 65543, 22, 0, 65544, 22, 0, 65545, 22, 0, 65546, 22, 0, 65547, 22, 0, 65548, 22, 0, 65549, 22, 0, 65550, 22, 0, 65551, 22, 0, 196607, 22, 0, 131072, 22, 0, 131073, 22, 0, 131074, 22, 0, 131075, 22, 0, 131076, 22, 0, 131077, 22, 0, 131078, 22, 0, 131079, 22, 0, 131080, 22, 0, 131081, 22, 0, 131082, 22, 0, 131083, 22, 0, 131084, 22, 0, 131085, 22, 0, 131086, 22, 0, 131087, 22, 0, 262143, 22, 0, 196608, 22, 0, 196609, 22, 0, 196610, 22, 0, 196611, 22, 0, 196612, 22, 0, 196613, 22, 0, 196614, 22, 0, 196615, 22, 0, 196616, 22, 0, 196617, 22, 0, 196618, 22, 0, 196619, 22, 0, 196620, 22, 0, 196621, 22, 0, 196622, 22, 0, 196623, 22, 0, 327679, 22, 0, 262144, 22, 0, 262145, 22, 0, 262146, 22, 0, 262147, 22, 0, 262148, 22, 0, 262149, 22, 0, 262150, 22, 0, 262151, 22, 0, 262152, 22, 0, 262153, 22, 0, 262154, 22, 0, 262155, 22, 0, 262156, 22, 0, 262157, 22, 0, 262158, 22, 0, 262159, 22, 0, 393215, 22, 0, 327680, 22, 0, 327681, 22, 0, 327682, 22, 0, 327683, 22, 0, 327684, 22, 0, 327685, 22, 0, 327686, 22, 0, 327687, 22, 0, 327688, 22, 0, 327689, 22, 0, 327690, 22, 0, 327691, 22, 0, 327692, 22, 0, 327693, 22, 0, 327694, 22, 0, 327695, 22, 0, 458751, 22, 0, 524287, 22, 0, 458756, 22, 0, 589823, 22, 0, 655359, 22, 0, 720895, 22, 0, 786431, 22, 0, 720905, 15, 0, 720906, 15, 0, 720913, 15, 0, 720914, 15, 0, 720915, 15, 0, 720916, 15, 0, 720917, 15, 0, 720918, 15, 0, 720919, 15, 0, 720920, 15, 0, 851967, 22, 0, 786441, 22, 0, 786442, 22, 0, 786456, 22, 0, 917503, 22, 0, 851977, 22, 0, 851978, 22, 0, 851992, 22, 0, 983039, 22, 0, 917513, 22, 0, 917514, 22, 0, 917528, 22, 0, 1048575, 22, 0, 983049, 22, 0, 983050, 22, 0, 983064, 22, 0, 1114111, 22, 0, 1048600, 22, 0, 1179647, 22, 0, 1114136, 22, 0, 1245183, 22, 0, 1179672, 22, 0, 1310719, 22, 0, 1245193, 22, 0, 1245194, 22, 0, 1245208, 22, 0, 1376255, 22, 0, 1310729, 22, 0, 1310730, 22, 0, 1310744, 22, 0, 1441791, 22, 0, 1376256, 6, 0, 1376264, 6, 0, 1376265, 22, 0, 1376266, 22, 0, 1376280, 22, 0, 1507327, 22, 0, 1441792, 15, 0, 1441793, 15, 0, 1441799, 15, 0, 1441800, 15, 0, 1441801, 15, 0, 1441802, 15, 0, 1441803, 15, 0, 1441804, 15, 0, 1441805, 15, 0, 1441806, 15, 0, 1441807, 15, 0, 1441808, 15, 0, 1441809, 15, 0, 1441810, 15, 0, 1441811, 15, 0, 1441812, 15, 0, 1441813, 15, 0, 1441814, 15, 0, 1441815, 15, 0, 1441816, 22, 0, 1572863, 22, 0, 1638399, 22, 0, 1703935, 22, 0, 1638413, 6, 0, 1769471, 22, 0, 1703943, 15, 0, 1703944, 15, 0, 1703945, 15, 0, 1703946, 15, 0, 1703947, 15, 0, 1703948, 15, 0, 1703949, 15, 0, 1703950, 15, 0, 1703951, 15, 0, 1703952, 15, 0, 1703953, 15, 0, 1703954, 15, 0, 1703955, 15, 0, 1703956, 15, 0, 1703957, 15, 0, 1703958, 15, 0, 1703959, 15, 0, 1703960, 15, 0, 1835007, 22, 0, 1769485, 22, 0, 1769486, 22, 0, 1900543, 22, 0, 1835021, 22, 0, 1835022, 22, 0, 1966079, 22, 0, 1900544, 6, 0, 1900557, 22, 0, 1900558, 22, 0, 1900559, 6, 0, 2031615, 22, 0, 1966080, 15, 0, 1966081, 15, 0, 1966082, 15, 0, 1966083, 15, 0, 1966084, 15, 0, 1966085, 15, 0, 1966086, 15, 0, 1966087, 15, 0, 1966088, 15, 0, 1966089, 15, 0, 1966090, 15, 0, 1966091, 15, 0, 1966092, 15, 0, 1966093, 15, 0, 1966094, 15, 0, 1966095, 15, 0, 1966096, 15, 0, 1966097, 15, 0, 1966098, 15, 0, 1966099, 15, 0, 1966100, 15, 0, 1966101, 15, 0, 1966102, 15, 0, 1966103, 15, 0, 1966104, 15, 0, 2097151, 22, 0, 2031616, 22, 0, 2031617, 22, 0, 2031618, 22, 0, 2031619, 22, 0, 2031620, 22, 0, 2031621, 22, 0, 2031622, 22, 0, 2031623, 22, 0, 2031624, 22, 0, 2031625, 22, 0, 2031626, 22, 0, 2031627, 22, 0, 2031628, 22, 0, 2031629, 22, 0, 2031630, 22, 0, 2031631, 22, 0, 2031632, 22, 0, 2031633, 22, 0, 2031634, 22, 0, 2031635, 22, 0, 2031636, 22, 0, 2031637, 22, 0, 2031638, 22, 0, 2031639, 22, 0, 2031640, 22, 0 )
+
+[node name="LevelPause" parent="." instance=ExtResource( 6 )]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 172.534, 1484.92 )
+
+[node name="Path2D" type="Path2D" parent="Node2D"]
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Node2D/Path2D"]
+position = Vector2( 76.4994, -70.1962 )
+rotation = -1.5847
+offset = 51.37
+rotate = false
+loop = false
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Node2D/Path2D/PathFollow2D"]
+rotation = 1.5708
+collision_layer = 8
+
+[node name="TileMap" type="TileMap" parent="Node2D/Path2D/PathFollow2D/KinematicBody2D"]
+position = Vector2( 0.000244141, -8.48535 )
+tile_set = ExtResource( 1 )
+collision_use_parent = true
+format = 1
+tile_data = PoolIntArray( 65534, 15, 0, 65535, 15, 0, 0, 15, 0, 1, 15, 0, 2, 15, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Path2D/PathFollow2D/KinematicBody2D"]
+position = Vector2( 32, 23.5 )
+shape = SubResource( 2 )
+
+[node name="AnimationPlayerPlatform1" type="AnimationPlayer" parent="Node2D"]
+playback_process_mode = 0
+anims/MovingPlatform = SubResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( 279.673, 1333.93 )
+
+[node name="Camera2D" parent="Player" index="0"]
+limit_bottom = 2016
+
+[node name="Key" parent="." instance=ExtResource( 5 )]
+position = Vector2( 780, 1849.79 )
+
+[node name="FlyingMonster" parent="." instance=ExtResource( 9 )]
+position = Vector2( 91, 1879.89 )
+
+[node name="FlyingMonster2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 634.058, 1882.89 )
+
+[node name="FlyingMonster3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1024, 1882.89 )
+
+[node name="FlyingMonster4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1406.01, 1876.89 )
+
+[editable path="Player"]

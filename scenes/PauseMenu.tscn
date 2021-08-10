@@ -102,11 +102,11 @@ stretch_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Pause Menu/VBoxContainer/HBoxContainer/Home" to="." method="_on_Home_pressed"]
 [connection signal="pressed" from="Pause Menu/VBoxContainer/HBoxContainer/Home" to="Pause Menu" method="_on_Home_pressed"]
-[connection signal="pressed" from="Pause Menu/VBoxContainer/HBoxContainer/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="pressed" from="Pause Menu/VBoxContainer/HBoxContainer/Home" to="." method="_on_Home_pressed"]
 [connection signal="pressed" from="Pause Menu/VBoxContainer/HBoxContainer/Restart" to="Pause Menu" method="_on_Restart_pressed"]
+[connection signal="pressed" from="Pause Menu/VBoxContainer/HBoxContainer/Restart" to="." method="_on_Restart_pressed"]
 [connection signal="pressed" from="Pause Menu/VBoxContainer/HBoxContainer/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="Pause Menu/VBoxContainer/HBoxContainer/Camera" to="." method="_on_Camera_pressed"]
-[connection signal="pressed" from="Pause Menu/VBoxContainer/HBoxContainer/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="Pause Menu/VBoxContainer/HBoxContainer/Resume" to="Pause Menu" method="_on_Resume_pressed"]
+[connection signal="pressed" from="Pause Menu/VBoxContainer/HBoxContainer/Resume" to="." method="_on_Resume_pressed"]

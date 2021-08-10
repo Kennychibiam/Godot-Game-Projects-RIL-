@@ -3,6 +3,7 @@ extends Node2D
 var ENEMY_MAX_HEALTH=20
 var ENEMY_SWORD_DAMAGE=4
 var ENEMY_MAGIC_DAMAGE=7
+var ENEMY_PROJECTILE_FIRE_DAMAGE=5.5
 var SKELETON_POSITION=Vector2.ZERO
 
 var BOSS_ENEMY_FIRE_DAMAGE=8
@@ -28,6 +29,11 @@ var LEVEL_FAILED=false
 var CAN_SPAWN_SKELETON=false
 
 var save={}
-
+func restart():
+	GlobalScene.COINS=0
+	GlobalScene.NUM_KEYS=0
+	GlobalScene.SCORE=0
+	GlobalScene.TREASURE_NO=0
+	GlobalScene.LEVEL_COMPLETE=false
 func _ready() -> void:
 	pass

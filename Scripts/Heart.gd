@@ -1,11 +1,15 @@
 extends Area2D
 
 
-
+var canCollect=true
 
 func _on_Heart_body_entered(body: Node) -> void:
-	$HealthAudioStreamPlayer2D.play()
-	$TimerToDestroy.start()
+	if(canCollect):
+		$HealthAudioStreamPlayer2D.play()
+		canCollect=false
+		$Sprite.visible=false
+		$CollisionShape2D.disabled=true
+		$TimerToDestroy.start()
 
 
 

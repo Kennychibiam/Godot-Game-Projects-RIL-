@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Picture_Imports/Items/Heart.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Heart.gd" type="Script" id=2]
-[ext_resource path="res://sounds/health_pickup.wav" type="AudioStream" id=3]
+[ext_resource path="res://sounds/healthPickup.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 70, 58 )
@@ -23,7 +23,6 @@ shape = SubResource( 1 )
 stream = ExtResource( 3 )
 
 [node name="TimerToDestroy" type="Timer" parent="."]
-wait_time = 0.5
 [connection signal="body_entered" from="." to="." method="_on_Heart_body_entered"]
 [connection signal="finished" from="HealthAudioStreamPlayer2D" to="." method="_on_HealthAudioStreamPlayer2D_finished"]
 [connection signal="timeout" from="TimerToDestroy" to="." method="_on_TimerToDestroy_timeout"]

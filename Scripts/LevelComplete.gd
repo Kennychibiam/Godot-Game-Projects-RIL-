@@ -8,9 +8,13 @@ func _ready() -> void:
 	$LevelComplete/Control/TextureRect/VBoxContainer/VBoxContainer/HBoxContainer3/Treasure.text=str(" :")+str(GlobalScene.TREASURE_NO)
 	if(GlobalScene.TREASURE_NO<2):
 		$LevelComplete/Control/TextureRect/VBoxContainer/StarsHbox/Star3.visible=false
+	if(GlobalScene.NUM_KEYS<4):
+		$LevelComplete/Control/TextureRect/VBoxContainer/StarsHbox/Star2.visible=false
 func _on_Home_button_down() -> void:
 	get_tree().change_scene("res://scenes/HomeScreen.tscn")
 
 
 func _on_Restart_button_down() -> void:
 	get_tree().reload_current_scene()
+
+

@@ -9,6 +9,7 @@ func _on_Home_pressed() -> void:
 
 
 func _on_Restart_pressed() -> void:
+	GlobalScene.restart()
 	queue_free()
 	get_tree().reload_current_scene()
 	get_tree().paused=false

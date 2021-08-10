@@ -70,43 +70,28 @@
 [ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Hit/FW_Skeleton_Hit__003.png" type="Texture" id=95]
 [ext_resource path="res://Picture_Imports/Characters/Skeleton_Sprites/Hit/FW_Skeleton_Hit__004.png" type="Texture" id=96]
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
 region = Rect2( 192, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
 region = Rect2( 256, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
 region = Rect2( 320, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
 region = Rect2( 384, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
 region = Rect2( 448, 0, 64, 64 )
 
 [resource]
 animations = [ {
-"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
-"loop": false,
-"name": "die",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 91 ) ],
-"loop": true,
-"name": "hit",
-"speed": 20.0
-}, {
-"frames": [ ExtResource( 54 ), ExtResource( 58 ), ExtResource( 64 ), ExtResource( 53 ), ExtResource( 66 ), ExtResource( 63 ), ExtResource( 59 ), ExtResource( 51 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 49 ), ExtResource( 65 ), ExtResource( 52 ), ExtResource( 50 ), ExtResource( 57 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ) ],
-"loop": true,
-"name": "run",
-"speed": 20.0
-}, {
 "frames": [ ExtResource( 41 ), ExtResource( 29 ), ExtResource( 31 ), ExtResource( 39 ), ExtResource( 42 ), ExtResource( 35 ), ExtResource( 33 ), ExtResource( 37 ), ExtResource( 30 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 34 ), ExtResource( 44 ) ],
 "loop": true,
 "name": "attack",
@@ -117,13 +102,23 @@ animations = [ {
 "name": "hit2",
 "speed": 5.0
 }, {
-"frames": [  ],
-"loop": true,
-"name": "explosion",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 18 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 21 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 24 ), ExtResource( 13 ), ExtResource( 6 ), ExtResource( 12 ), ExtResource( 22 ), ExtResource( 7 ), ExtResource( 15 ), ExtResource( 8 ), ExtResource( 20 ), ExtResource( 25 ), ExtResource( 9 ), ExtResource( 17 ), ExtResource( 11 ), ExtResource( 23 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ],
 "loop": true,
 "name": "walk",
 "speed": 20.0
+}, {
+"frames": [ ExtResource( 54 ), ExtResource( 58 ), ExtResource( 64 ), ExtResource( 53 ), ExtResource( 66 ), ExtResource( 63 ), ExtResource( 59 ), ExtResource( 51 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 49 ), ExtResource( 65 ), ExtResource( 52 ), ExtResource( 50 ), ExtResource( 57 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ) ],
+"loop": true,
+"name": "run",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 91 ) ],
+"loop": true,
+"name": "hit",
+"speed": 20.0
+}, {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": false,
+"name": "die",
+"speed": 5.0
 } ]

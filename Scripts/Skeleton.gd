@@ -6,12 +6,13 @@ var canSeePlayer=false
 var canRun=true
 var isCollidingWithPlayer=false
 var speed=60.0
-const MAX_SPEED=100
+const MAX_SPEED=150
 var player_life=3
 var isAttacking=false
 var isActionAllowed=true  #used to implement hit reaction
 var PLAYER
 var canDie=true
+var coin=preload("res://scenes/Coin.tscn")
 
 
 
@@ -36,7 +37,7 @@ func _physics_process(delta: float) -> void:
 		 velocity.x=0
 		
 		if!is_on_floor():
-			velocity.y+=150
+			velocity.y+=100
 		else:
 			velocity.y=0
 		die()
@@ -153,6 +154,12 @@ func die():
 		collision_layer=7
 		velocity.x=0
 		velocity.y=0
+		var newCoin=coin.instance()
+		newCoin.canBounce=true
+		if !$AnimatedSprite.flip_h:
+			newCoin.velocity.x=-70
+		newCoin.global_position=$CoinSpawnPos.global_position
+		get_tree().get_current_scene().add_child(newCoin)
 		$AnimatedSprite.play("die")
 		$TimerForDeath.start()
 		

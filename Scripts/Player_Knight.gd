@@ -11,8 +11,6 @@ var velocity=Vector2.ZERO
 const floor_normal=Vector2.UP   #needed when using move and slide
 var speed=Vector2(350.0,1000.0)#controls speed of x and jump height 
 export var gravity=100.0  #controls the gravity 
-var anim_state_machine  
-var animated_sprites
 var isJumping=false
 var isAttacking=false
 var canPlayNextAttack=false
@@ -39,7 +37,6 @@ func _ready() -> void:
 		SaveGame.loadGame()
 		if(!SaveGame.load_game.empty()):
 			$CoinBar/CoinBar/HBoxContainer/Label.text=str(SaveGame.load_game["coins"])
-	animated_sprites=$AnimatedSprite
 	$Sword_Hit_Area/SwordCollisionShape2D.disabled=true
 	if(!canDisplayUI):
 		$HealthBar.queue_free()
@@ -55,8 +52,11 @@ func _physics_process(delta: float) -> void:
 	GlobalScene.PLAYER_POSITION_X=position.x
 	GlobalScene.PLAYER_POSITION=position
 	if(GlobalScene.LEVEL_COMPLETE or GlobalScene.LEVEL_FAILED):
+		direction.x=0
+		$AnimatedSprite.playing=false
+		$AnimatedSprite.stop()
 		$AnimatedSprite.visible=false
-		$GrassStepSound.stop()
+		#$AnimatedSprite.queue_free()
 		set_physics_process(false)
 	
 	#var is_jump_interrupted =  Input.is_action_just_released("jump") and velocity.y < 0.0
@@ -66,12 +66,10 @@ func _physics_process(delta: float) -> void:
 	
 	
 	if(allowOtherProcesses):
-
 		getActionAttack()
 		play_animations_states()
 		direction_input()
 		flip_character()
-
 		die()
 		ray_cast_collisions()
 	velocity=calculate_move_velocity(velocity,speed,direction,false)
@@ -89,12 +87,12 @@ func getActionAttack():
 
 		if(attack_count==0):
 			canPlayNextAttack=false
-			animated_sprites.play("attack1")
+			$AnimatedSprite.play("attack1")
 			$SwordSlash.play()
 			attack_count+=1
 			$TimerForAttackCombo.start()
 		if(attack_count==1 and canPlayNextAttack):
-			animated_sprites.play("attack2")
+			$AnimatedSprite.play("attack2")
 			$SwordSlash.play()
 			attack_count=0
 
@@ -113,22 +111,20 @@ func direction_input()->void:
 		direction.x=0
 	if(Input.is_action_just_released("ui_right")):
 		direction.x=0
-		
 	if(Input.is_action_just_released("ui_up")):
 		direction.y=0
 	
 	
 func dash()->void:
 	if(canDash):
-		$Camera2D.smoothing_enabled=true
-		direction.x=0
+		#direction.x=0
 		velocity.y=0
 		canDash=false
 		allowOtherProcesses=false
 		$AnimatedSprite.play("dash")
 		if($AnimatedSprite.flip_h):
-			velocity.x=-1*10000
-		else:velocity.x=10000
+			velocity.x=-1*20000
+		else:velocity.x=20000
 		$TimerForDash.start()
 	
 func ray_cast_collisions()->void:
@@ -139,18 +135,18 @@ func ray_cast_collisions()->void:
 
 func flip_character()->void:
 	if direction.x==-1:
-		animated_sprites.set_flip_h(true)
+		$AnimatedSprite.set_flip_h(true)
 		GlobalScene.IS_PLAYER_FLIPPED=true
-		$DoubleJumpRayCast2D.position=Vector2(7,-86)
+		$DoubleJumpRayCast2D.position=Vector2(7,-61)
 		$DoubleJumpRayCast2D.rotation_degrees=90
-		$Sword_Hit_Area/SwordCollisionShape2D.position=Vector2(-80,-113)
+		$Sword_Hit_Area/SwordCollisionShape2D.position=Vector2(4,-123)
 		#$CollisionShape2D.position=Vector2(72,62)
 	elif direction.x==1:
-		animated_sprites.set_flip_h(false)
+		$AnimatedSprite.set_flip_h(false)
 		GlobalScene.IS_PLAYER_FLIPPED=false
-		$DoubleJumpRayCast2D.position=Vector2(67,-86)
+		$DoubleJumpRayCast2D.position=Vector2(54,-61)
 		$DoubleJumpRayCast2D.rotation_degrees=-90
-		$Sword_Hit_Area/SwordCollisionShape2D.position=Vector2(120,-113)
+		$Sword_Hit_Area/SwordCollisionShape2D.position=Vector2(70,-123)
 		#$CollisionShape2D.position=Vector2(-250,20)
 func play_animations_states()->void:
 	if(!is_on_floor()):
@@ -169,13 +165,13 @@ func play_animations_states()->void:
 
 	
 	if(!is_on_floor() and velocity.y>-1000 and !isAttacking):
-		animated_sprites.play("fall")
+		$AnimatedSprite.play("fall")
 	
 	if (direction.x != 0 and !isJumping and !isAttacking):
-		animated_sprites.play("run")
+		$AnimatedSprite.play("run")
 		#anim_state_machine.travel("move")
 	elif (direction.x==0 and !isJumping and !isAttacking):
-		animated_sprites.play("idle")
+		$AnimatedSprite.play("idle")
 		#anim_state_machine.travel("idle")
 
 func calculate_move_velocity(linear_Velocity:Vector2,speed:Vector2,direction:Vector2,is_jump_interrupted:bool)->Vector2:
@@ -188,11 +184,11 @@ func calculate_move_velocity(linear_Velocity:Vector2,speed:Vector2,direction:Vec
 	#print(new_velocity.y)
 	
 	if (direction.y==-1.0 and jump_count<1 and is_on_floor())  :
-		animated_sprites.play("jump")
+		$AnimatedSprite.play("jump")
 		jump_count+=1
 		new_velocity.y=-speed.y  #how far up player should go when jump is pressed
 	if !is_on_floor() and (Input.is_action_just_pressed("jump") or Input.is_action_just_pressed("ui_up")) and jump_count<MAX_JUMP_COUNT:
-		 animated_sprites.play("jump")
+		 $AnimatedSprite.play("jump")
 		 jump_count+=1
 		 new_velocity.y=-speed.y
 
@@ -206,45 +202,47 @@ func calculate_move_velocity(linear_Velocity:Vector2,speed:Vector2,direction:Vec
 
 
 func _on_AnimatedSprite_animation_finished() -> void:
-	if(animated_sprites.animation=="attack1" or animated_sprites.animation=="attack2"):
+	if($AnimatedSprite.animation=="attack1" or $AnimatedSprite.animation=="attack2"):
 		isAttacking=false
 		velocity.x=0
 
 	
-	if(animated_sprites.animation=="attack1"):
+	if($AnimatedSprite.animation=="attack1"):
 		canPlayNextAttack=true
 		
-	if(animated_sprites.animation=="hit"):
+	if($AnimatedSprite.animation=="hit"):
 		allowOtherProcesses=true
-	if(animated_sprites.animation=="death"):
+	if($AnimatedSprite.animation=="death"):
 		$AnimatedSprite.visible=false
 
 func die()->void:
 	if($HealthBar/HEALTH/HealthBar.value<=0):
 		allowOtherProcesses=false
 		get_tree().get_current_scene().add_child(restartHome)
-		$CollisionShape2D.disabled=true
 		velocity.y=0
 		$Player_React_Area2D/CollisionShape2D.disabled=true
-		animated_sprites.play("death")
-		
+		$AnimatedSprite.play("death")
 
-
-
-func _on_Player_React_Area2D_area_entered(area: Area2D) -> void:
-
-	if("SwordDetect" in area.name):
+func hitReactFunc(name:String):
+	if("SwordDetect" in name):
 		$HealthBar/HEALTH/HealthBar.value-=GlobalScene.ENEMY_SWORD_DAMAGE
-	if("Heart" in area.name):
+	if("Heart" in name):
 		$HealthBar/HEALTH/HealthBar.value+=20
 		
-	if("Coin" in area.name):
+	if("Coin" in name):
 		GlobalScene.COINS+=1
 		$CoinBar/CoinBar/HBoxContainer/Label.text=str(GlobalScene.COINS)
-	if("FireBreath" in area.name):
+	if("FireBreath" in name):
 		$HealthBar/HEALTH/HealthBar.value-=GlobalScene.BOSS_ENEMY_FIRE_DAMAGE
-	if("Key" in area.name):
+	if("Key" in name):
+		GlobalScene.NUM_KEYS+=1
 		$KeyBar/KeyBar/HBoxContainer/Label.text=str(GlobalScene.NUM_KEYS)
+	if("FireProjectile" in name):
+		$HealthBar/HEALTH/HealthBar.value-=GlobalScene.ENEMY_PROJECTILE_FIRE_DAMAGE
+
+func _on_Player_React_Area2D_area_entered(area: Area2D) -> void:
+	hitReactFunc(area.name)
+	
 
 func _on_Sword_Hit_Area_body_entered(body: Node) -> void:
 	$AudioStreamPlayer2D.play()
@@ -265,11 +263,11 @@ func _on_AnimatedSprite_frame_changed() -> void:
 			$Sword_Hit_Area/SwordCollisionShape2D.disabled=false
 		else:$Sword_Hit_Area/SwordCollisionShape2D.disabled=true
 	if ($AnimatedSprite.animation=="run"):
-		if($AnimatedSprite.get_frame()==0):
+		if($AnimatedSprite.get_frame()==0 and !GlobalScene.LEVEL_COMPLETE):
 			$GrassStepSound.play()
 			yield(get_tree().create_timer(0.2),"timeout")
 			$GrassStepSound.stop()
-		if($AnimatedSprite.get_frame()==4):
+		if($AnimatedSprite.get_frame()==4 and !GlobalScene.LEVEL_COMPLETE):
 			$GrassStepSound.play()
 			yield(get_tree().create_timer(0.2),"timeout")
 			$GrassStepSound.stop()
@@ -278,7 +276,6 @@ func _on_AnimatedSprite_frame_changed() -> void:
 
 
 func _on_TimerForDash_timeout() -> void:
-	$Camera2D.smoothing_enabled=false
 	canDash=true
 	allowOtherProcesses=true
 	velocity.x=0

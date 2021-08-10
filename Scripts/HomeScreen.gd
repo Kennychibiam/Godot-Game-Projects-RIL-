@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var skeleton=load("res://scenes/HomeScreen_Skeleton.tscn")
+onready var skeleton=load("res://scenes/HomeScreenSkeleton.tscn")
 var isLeft=true
 func _physics_process(delta: float) -> void:
 	if(!$AudioStreamPlayer2D.playing):

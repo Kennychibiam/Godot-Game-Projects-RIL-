@@ -8,7 +8,7 @@
 [ext_resource path="res://scenes/Demon.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/SignDirection.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/LevelPause.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/Kill_Zone.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/KillZone.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/Coin.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Checkpoint.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/PlayerKnight.tscn" type="PackedScene" id=12]
@@ -16,6 +16,7 @@
 [ext_resource path="res://scenes/Tree.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/Skeleton.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/Heart.tscn" type="PackedScene" id=16]
+
 
 [node name="Level5" type="Node2D"]
 position = Vector2( -69, -118 )

@@ -19,6 +19,7 @@ __meta__ = {
 }
 
 [node name="LevelComplete" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="Control" type="Control" parent="LevelComplete"]
 anchor_left = 0.5
