@@ -2,6 +2,12 @@ extends Node2D
 
 
 onready var PAUSE_MENU=load("res://scenes/PauseMenu.tscn")
+func _ready() -> void:
+	GlobalScene.COINS=0
+	GlobalScene.NUM_KEYS=0
+	GlobalScene.SCORE=0
+	GlobalScene.TREASURE_NO=0
+	GlobalScene.LEVEL_COMPLETE=false
 
 func _on_HiddenAreaTrigger_body_entered(body: Node) -> void:
 	if("Player" in body.name):

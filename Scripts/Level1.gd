@@ -1,5 +1,5 @@
 extends Node2D
-var canAddPortal=true
+
 onready var PAUSE_MENU=load("res://scenes/PauseMenu.tscn")
 
 

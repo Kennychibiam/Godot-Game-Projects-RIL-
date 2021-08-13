@@ -50,7 +50,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	#print(get_parent().name+" parent")
 	GlobalScene.PLAYER_POSITION_X=position.x
-	GlobalScene.PLAYER_POSITION=position
+	GlobalScene.PLAYER_POSITION=global_position
 	if(GlobalScene.LEVEL_COMPLETE or GlobalScene.LEVEL_FAILED):
 		direction.x=0
 		$AnimatedSprite.playing=false
@@ -76,7 +76,7 @@ func _physics_process(delta: float) -> void:
 	
 	if(Input.is_action_just_pressed("ui_dash")):
 		dash()
-	snapVector=Vector2(0,32.0)if snap else Vector2.ZERO
+	snapVector=Vector2(0,100) if snap else Vector2.ZERO
 	move_and_slide_with_snap(velocity,snapVector,floor_normal)
 
 
@@ -137,14 +137,14 @@ func flip_character()->void:
 	if direction.x==-1:
 		$AnimatedSprite.set_flip_h(true)
 		GlobalScene.IS_PLAYER_FLIPPED=true
-		$DoubleJumpRayCast2D.position=Vector2(7,-61)
+		$DoubleJumpRayCast2D.position=Vector2(7,-1)
 		$DoubleJumpRayCast2D.rotation_degrees=90
 		$Sword_Hit_Area/SwordCollisionShape2D.position=Vector2(4,-123)
 		#$CollisionShape2D.position=Vector2(72,62)
 	elif direction.x==1:
 		$AnimatedSprite.set_flip_h(false)
 		GlobalScene.IS_PLAYER_FLIPPED=false
-		$DoubleJumpRayCast2D.position=Vector2(54,-61)
+		$DoubleJumpRayCast2D.position=Vector2(54,-1)
 		$DoubleJumpRayCast2D.rotation_degrees=-90
 		$Sword_Hit_Area/SwordCollisionShape2D.position=Vector2(70,-123)
 		#$CollisionShape2D.position=Vector2(-250,20)
@@ -239,6 +239,8 @@ func hitReactFunc(name:String):
 		$KeyBar/KeyBar/HBoxContainer/Label.text=str(GlobalScene.NUM_KEYS)
 	if("FireProjectile" in name):
 		$HealthBar/HEALTH/HealthBar.value-=GlobalScene.ENEMY_PROJECTILE_FIRE_DAMAGE
+	if("Spikes" in name):
+		$HealthBar/HEALTH/HealthBar.value-=GlobalScene.SPIKE_DAMAGE
 
 func _on_Player_React_Area2D_area_entered(area: Area2D) -> void:
 	hitReactFunc(area.name)

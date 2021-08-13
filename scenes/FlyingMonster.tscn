@@ -29,7 +29,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 animation = "idle"
-frame = 22
+frame = 9
 playing = true
 
 [node name="DeathAnimation" type="AnimatedSprite" parent="."]
@@ -71,14 +71,14 @@ position = Vector2( 6, -68 )
 shape = SubResource( 2 )
 
 [node name="FireProjectilePosition" type="Position2D" parent="."]
-position = Vector2( -26.6667, -56 )
+position = Vector2( -8.39233e-05, -56 )
 
 [node name="TimerToFire" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
 
 [node name="TopRayCast" type="RayCast2D" parent="."]
-position = Vector2( 0, -106.667 )
+position = Vector2( 0, -133.334 )
 rotation = 3.14159
 enabled = true
 cast_to = Vector2( 0, 80 )
@@ -105,6 +105,9 @@ value = 10.0
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
 process_parent = true
 physics_process_parent = true
+
+[node name="CoinSpawnPosition" type="Position2D" parent="."]
+position = Vector2( 0, -53.3333 )
 [connection signal="area_entered" from="HitReact" to="." method="_on_HitReact_area_entered"]
 [connection signal="frame_changed" from="DeathAnimation" to="." method="_on_DeathAnimation_frame_changed"]
 [connection signal="timeout" from="TimerToFire" to="." method="_on_TimerToFire_timeout"]

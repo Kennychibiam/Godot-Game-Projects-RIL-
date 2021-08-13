@@ -18,3 +18,11 @@ func _on_Restart_button_down() -> void:
 	get_tree().reload_current_scene()
 
 
+
+
+func _on_Next_button_down() -> void:
+	var position=GlobalScene.levels.find(get_parent().name)
+	if(position!=-1 and position<GlobalScene.levels.size()-1):
+		var level=GlobalScene.levels[position+1]
+		get_tree().change_scene("res://scenes/"+str(level)+str(".tscn"))
+		

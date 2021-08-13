@@ -93,13 +93,13 @@ position = Vector2( 3808, 218 )
 position = Vector2( 4287, 412 )
 
 [node name="Skeleton16" parent="." instance=ExtResource( 7 )]
-position = Vector2( 4060, -704 )
+position = Vector2( 4060, -672 )
 
 [node name="Skeleton17" parent="." instance=ExtResource( 7 )]
-position = Vector2( 3777, -727 )
+position = Vector2( 3773, -671 )
 
 [node name="Skeleton20" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2457, -789 )
+position = Vector2( 2461, -745 )
 
 [node name="Skeleton21" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1113, -49 )
@@ -117,10 +117,16 @@ position = Vector2( 5826, -463 )
 position = Vector2( 6146, -455 )
 
 [node name="AnimatedSprite" parent="Skeleton32" index="2"]
-frame = 1
+frame = 6
 
 [node name="Skeleton33" parent="." instance=ExtResource( 7 )]
 position = Vector2( 6100, 665 )
+
+[node name="Skeleton34" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2479.61, -355.177 )
+
+[node name="Skeleton35" parent="." instance=ExtResource( 7 )]
+position = Vector2( 5619.17, 417.471 )
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
 position = Vector2( 321.309, 281.316 )
@@ -243,7 +249,7 @@ position = Vector2( 2326.36, 829.421 )
 position = Vector2( 3022.16, 1021.75 )
 
 [node name="Key" parent="." instance=ExtResource( 17 )]
-position = Vector2( 3792, -1054 )
+position = Vector2( 3864, -854 )
 
 [node name="Key2" parent="." instance=ExtResource( 17 )]
 position = Vector2( 6665, -624 )

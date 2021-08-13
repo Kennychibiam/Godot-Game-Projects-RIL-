@@ -136,16 +136,17 @@ func _on_AnimatedSprite_animation_finished() -> void:
 
 
 func _on_Hit_React_Area2D_area_entered(area: Area2D) -> void:
-	isActionAllowed=false
-	if(canDie):
-		if(position.x-GlobalScene.PLAYER_POSITION_X>0):
-			velocity.x=50
-			pass
-		else:
-			velocity.x=-50
-	
-		$AnimatedSprite.play("hit")
-		$EnemyHealthBar/ProgressBar.value-=GlobalScene.PLAYER_SWORD_DAMAGE
+	if(area.name=="Sword_Hit_Area"):
+		isActionAllowed=false
+		if(canDie):
+			if(position.x-GlobalScene.PLAYER_POSITION_X>0):
+				velocity.x=50
+				pass
+			else:
+				velocity.x=-50
+		
+			$AnimatedSprite.play("hit")
+			$EnemyHealthBar/ProgressBar.value-=GlobalScene.PLAYER_SWORD_DAMAGE
 func die():
 	if($EnemyHealthBar/ProgressBar.value<=0 and canDie):
 		$CollisionShape2D.disabled=true

@@ -38,7 +38,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 animation = "walk"
-frame = 18
+frame = 12
 playing = true
 
 [node name="FlipRightPositionRayCast2D" type="RayCast2D" parent="."]

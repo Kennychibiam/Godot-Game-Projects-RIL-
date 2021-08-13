@@ -24,8 +24,6 @@ func _ready() -> void:
 			var Star3=i.find_node("Star3")
 			Star3.visible=false
 
-func _on_Level1_button_down() -> void:
-	get_tree().change_scene("res://scenes/Level1.tscn")
 
 
 func _on_BackButton_button_down() -> void:
@@ -37,6 +35,16 @@ func _notification(what: int) -> void:
 	if what==MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
 		get_tree().change_scene("res://scenes/ChooseWorld.tscn")
 
+func _on_Level1_button_down() -> void:
+	get_tree().change_scene("res://scenes/Level1.tscn")
 
 func _on_Level2_button_down() -> void:
 	get_tree().change_scene("res://scenes/Level2.tscn")
+
+
+func _on_Level3_button_down() -> void:
+	get_tree().change_scene("res://scenes/Level3.tscn")
+
+
+func _on_Level4_button_down() -> void:
+	get_tree().change_scene("res://scenes/Level4.tscn")

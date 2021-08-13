@@ -6,7 +6,9 @@ var movement=Vector2.ZERO
 var attackSpeed=80
 var isPlayerAtLeft=false
 var fireProjectile=preload("res://scenes/Fire.tscn")
+var coin=preload("res://scenes/Coin.tscn")
 var canDie=true
+
 func _ready() -> void:
 	set_physics_process(false)
 func _physics_process(delta: float) -> void:
@@ -20,7 +22,7 @@ func _physics_process(delta: float) -> void:
 	
 
 	stopMovement()
-	#stillFloat()
+	stillFloat()
 	die()
 	move_and_slide(movement,Vector2.UP)
 
@@ -56,10 +58,14 @@ func moveToPlayer():
 		movement=position.direction_to(GlobalScene.PLAYER_POSITION)*80
 
 func stillFloat():
+	if(!canMoveToPlayer):
+		if !$BottomRayCast.is_colliding():
+			movement.y+=50
+		else:movement.y=0
+	elif canMoveToPlayer:
+		pass
 	
-	if $BottomRayCast.is_colliding():
-		movement.y=-50
-	else:movement.y=0
+	
 
 
 func _on_TimerToFire_timeout() -> void:
@@ -78,15 +84,24 @@ func _on_TimerToFire_timeout() -> void:
 
 
 func _on_HitReact_area_entered(area: Area2D) -> void:
-	$EnemyHealthBar/ProgressBar.value-=GlobalScene.PLAYER_SWORD_DAMAGE
-	$AnimatedSprite.self_modulate="#7a5858"
-	yield(get_tree().create_timer(0.15),"timeout")
-	$AnimatedSprite.self_modulate="#ffffff"
+	if(area.name=="Sword_Hit_Area"):
+		$EnemyHealthBar/ProgressBar.value-=GlobalScene.PLAYER_SWORD_DAMAGE
+		$AnimatedSprite.self_modulate="#7a5858"
+		yield(get_tree().create_timer(0.15),"timeout")
+		$AnimatedSprite.self_modulate="#ffffff"
 func die():
-	if $EnemyHealthBar/ProgressBar.value<=0:
-		$AnimatedSprite.visible=false
-		$DeathAnimation.visible=true
-		$DeathAnimation.play("explode")
+	if(canDie):
+		if $EnemyHealthBar/ProgressBar.value<=0:
+			canDie=false
+			$AnimatedSprite.visible=false
+			$DeathAnimation.visible=true
+			var newCoin=coin.instance()
+			newCoin.position=$CoinSpawnPosition.global_position
+			newCoin.canBounce=true
+			newCoin.velocity.x=0
+			get_tree().get_current_scene().add_child(newCoin)
+			$DeathAnimation.play("explode")
+			
 
 
 func _on_DeathAnimation_frame_changed() -> void:

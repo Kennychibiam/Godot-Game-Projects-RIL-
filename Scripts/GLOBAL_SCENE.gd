@@ -1,6 +1,7 @@
 extends Node2D
 
 var ENEMY_MAX_HEALTH=20
+var SPIKE_DAMAGE=4
 var ENEMY_SWORD_DAMAGE=4
 var ENEMY_MAGIC_DAMAGE=7
 var ENEMY_PROJECTILE_FIRE_DAMAGE=5.5
@@ -28,7 +29,7 @@ var LEVEL_COMPLETE=false
 var LEVEL_FAILED=false
 var CAN_SPAWN_SKELETON=false
 
-var save={}
+var levels=["Level1","Level2","Level3"]
 func restart():
 	GlobalScene.COINS=0
 	GlobalScene.NUM_KEYS=0
